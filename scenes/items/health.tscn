@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://iyb1keojmn67"]
+
+[ext_resource type="ArrayMesh" uid="uid://da0uy6f025q6n" path="res://assets/item/heart.res" id="1_er7j5"]
+[ext_resource type="Script" path="res://scripts/health.gd" id="1_f6u34"]
+[ext_resource type="PackedScene" uid="uid://byn6wxprdlskt" path="res://scenes/shadow.tscn" id="2_gu6lj"]
+[ext_resource type="Texture2D" uid="uid://brlg2d3jfssvn" path="res://assets/Heart.png" id="4_que5f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n4tqe"]
+albedo_texture = ExtResource("4_que5f")
+metallic = 0.25
+clearcoat_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dn7eq"]
+
+[node name="Health" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+script = ExtResource("1_f6u34")
+range = Vector2(20, 50)
+
+[node name="Shadow" parent="." instance=ExtResource("2_gu6lj")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_er7j5")
+surface_material_override/0 = SubResource("StandardMaterial3D_n4tqe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_dn7eq")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 12.0
+
+[node name="ShadowCast" type="RayCast3D" parent="."]
+target_position = Vector3(0, -5, 0)
+
+[node name="GravCast" type="RayCast3D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

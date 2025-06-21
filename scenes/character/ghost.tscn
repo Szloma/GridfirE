@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://btqx5nlqe3lcs"]
+
+[ext_resource type="PackedScene" uid="uid://dch4ekfmty4al" path="res://assets/ghost.blend" id="1_0c6e6"]
+[ext_resource type="Texture2D" uid="uid://b4kdtfwpivnqo" path="res://testures/character/GhostEyes.png" id="2_kdnqu"]
+[ext_resource type="Texture2D" uid="uid://drnvchp00exfh" path="res://assets/ghost.png" id="2_rua08"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxioe"]
+albedo_texture = ExtResource("2_rua08")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxaro"]
+transparency = 1
+albedo_texture = ExtResource("2_kdnqu")
+
+[node name="ghost" instance=ExtResource("1_0c6e6")]
+
+[node name="Ghost" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_rxioe")
+
+[node name="Eyes" parent="." index="1"]
+transform = Transform3D(1.00825, 0, 0, 0, 1.00825, 0, 0, 0, 1.00825, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_jxaro")

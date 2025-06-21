@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MapResource" load_steps=4 format=3 uid="uid://mgbfwxr6fpje"]
+
+[ext_resource type="Texture2D" uid="uid://4l6f3tj7t771" path="res://testures/map_preview/map2.png" id="1_4mi5u"]
+[ext_resource type="Script" path="res://scripts/map_resource.gd" id="1_umwru"]
+[ext_resource type="PackedScene" uid="uid://c5x0u813d7pjh" path="res://scenes/maps/map_2.tscn" id="2_3e6ba"]
+
+[resource]
+script = ExtResource("1_umwru")
+name = "map2"
+scene = ExtResource("2_3e6ba")
+preview_image = ExtResource("1_4mi5u")
+team_names = Array[String](["Purple", "Yellow"])
+rotation = 35.5

@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5x0u813d7pjh"]
+
+[ext_resource type="PackedScene" uid="uid://dyoh1ruokcd83" path="res://scenes/env/platform.tscn" id="1_4nhmr"]
+[ext_resource type="Script" path="res://scripts/map.gd" id="1_ik3de"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kmr3h"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_eum68"]
+sky_material = SubResource("ProceduralSkyMaterial_kmr3h")
+
+[sub_resource type="Environment" id="Environment_whyl2"]
+background_mode = 2
+sky = SubResource("Sky_eum68")
+tonemap_mode = 2
+
+[node name="Map2" type="Node3D"]
+script = ExtResource("1_ik3de")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_whyl2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="platform" parent="." instance=ExtResource("1_4nhmr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+
+[node name="platform2" parent="." instance=ExtResource("1_4nhmr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0874813, -2.38419e-07, -1.90267)
+
+[node name="platform3" parent="." instance=ExtResource("1_4nhmr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01926, 0, 1.25406)
+
+[node name="platform4" parent="." instance=ExtResource("1_4nhmr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.894, 0, 0.495611)
+
+[node name="SpawnZones" type="Node3D" parent="."]
+
+[node name="Marker3D" type="Marker3D" parent="SpawnZones"]
+
+[node name="Marker3D2" type="Marker3D" parent="SpawnZones"]

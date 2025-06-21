@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqxs13fhqnjac"]
+
+[ext_resource type="Script" path="res://scripts/vote_card.gd" id="1_l88gi"]
+[ext_resource type="Texture2D" uid="uid://4lie2yh527pn" path="res://testures/black_grid.png" id="1_u76a7"]
+[ext_resource type="Texture2D" uid="uid://cjojh0y4lufff" path="res://testures/GUI_SVG/LabelBackdrop.svg" id="3_h013m"]
+
+[node name="VoteCard" type="Button"]
+custom_minimum_size = Vector2(150, 187)
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_l88gi")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_right = 150.0
+offset_bottom = 203.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="MapPreview" type="TextureRect" parent="MarginContainer2/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+texture = ExtResource("1_u76a7")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer2/VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_h013m")
+
+[node name="MapName" type="Label" parent="MarginContainer2/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 26
+text = "MAP"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

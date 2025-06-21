@@ -1,0 +1,20 @@
+Audio effects:
+	pixabay.com
+Game design ideas:
+	Pinterest
+Game code:
+	kenney.nl
+	kidscancode.com
+	godot documentation
+Textures:
+	jetelly.com
+
+RPCawait
+https://github.com/dominiks/rpc-await
+
+sepia effect shader
+https://github.com/marinho/godot-visual-effects
+sky
+https://github.com/rpgwhitelock/AllSkyFree_Godot?tab=readme-ov-file
+water shader
+https://godotshaders.com/shader/wind-waker-water-no-textures-needed/

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyoh1ruokcd83"]
+
+[ext_resource type="PackedScene" uid="uid://chefvx1h73x4y" path="res://assets/environment/platform.blend" id="1_3loqc"]
+[ext_resource type="Material" uid="uid://b4x2i7wbxsryh" path="res://materials/platform.tres" id="2_jmbgg"]
+[ext_resource type="Script" path="res://scripts/platform.gd" id="2_qw36w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yhpvw"]
+size = Vector3(1.5, 0.299805, 1.5)
+
+[node name="platform" instance=ExtResource("1_3loqc")]
+script = ExtResource("2_qw36w")
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_jmbgg")
+
+[node name="Cube_001" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_jmbgg")
+
+[node name="PlayerDetector" type="Area3D" parent="." index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetector" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000736952, 0.305614, -0.00215876)
+shape = SubResource("BoxShape3D_yhpvw")
+
+[node name="DropTimer" type="Timer" parent="." index="4"]
+one_shot = true
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="timeout" from="DropTimer" to="." method="_on_drop_timer_timeout"]

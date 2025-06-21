@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://dg70cxyv7mw4c"]
+
+[ext_resource type="Script" path="res://scripts/GUI/select_tile.gd" id="1_irtld"]
+[ext_resource type="Texture2D" uid="uid://b8fjw8w7x26qr" path="res://testures/Buttons/PrevDefault.png" id="2_vggu7"]
+[ext_resource type="Texture2D" uid="uid://cpu2uqeyhx4e6" path="res://testures/Buttons/PrevPressed.png" id="3_1nonx"]
+[ext_resource type="Texture2D" uid="uid://d3bngwu8gvaiw" path="res://testures/Buttons/PrevHover.png" id="4_lymwy"]
+[ext_resource type="Texture2D" uid="uid://b50vkvk5hrag8" path="res://testures/Buttons/PrevSelection.png" id="5_7fnt7"]
+[ext_resource type="Texture2D" uid="uid://b6fn73b8mt27s" path="res://testures/Buttons/NextDefault.png" id="6_1nn1b"]
+[ext_resource type="Texture2D" uid="uid://nhj3hkravdge" path="res://testures/Buttons/NextPressed.png" id="7_ltfu4"]
+[ext_resource type="Texture2D" uid="uid://dt55oykmpgb3x" path="res://testures/Buttons/NextHover.png" id="8_45avq"]
+[ext_resource type="Texture2D" uid="uid://dm7bc8kg3gkf4" path="res://testures/Buttons/NextSelection.png" id="9_k3pel"]
+
+[node name="SelectTile" type="MarginContainer"]
+custom_minimum_size = Vector2(200, 0)
+offset_right = 200.0
+offset_bottom = 58.0
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_bottom = 2
+script = ExtResource("1_irtld")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Hair"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Prev" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_vggu7")
+texture_pressed = ExtResource("3_1nonx")
+texture_hover = ExtResource("4_lymwy")
+texture_focused = ExtResource("5_7fnt7")
+
+[node name="ID" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "None"
+horizontal_alignment = 1
+
+[node name="Next" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("6_1nn1b")
+texture_pressed = ExtResource("7_ltfu4")
+texture_hover = ExtResource("8_45avq")
+texture_focused = ExtResource("9_k3pel")
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Prev" to="." method="_on_prev_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Next" to="." method="_on_next_pressed"]

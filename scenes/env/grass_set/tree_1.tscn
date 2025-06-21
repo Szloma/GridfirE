@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c81fsh7v6xq1h"]
+
+[ext_resource type="PackedScene" uid="uid://bgc84o67v5xnn" path="res://assets/grassset/Tree.glb" id="1_7cbwv"]
+[ext_resource type="Texture2D" uid="uid://05ckaya2pmo4" path="res://assets/grassset/Tree_tree1.png" id="2_lmt0j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qdgrx"]
+albedo_texture = ExtResource("2_lmt0j")
+
+[node name="Tree1" type="Node3D"]
+
+[node name="Tree2" parent="." instance=ExtResource("1_7cbwv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.94142, 0)
+
+[node name="Tree" parent="Tree2" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_qdgrx")
+
+[editable path="Tree2"]

@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://2cedwxmoqrgr"]
+
+[ext_resource type="PackedScene" uid="uid://bfkxa1yjc4h3" path="res://scenes/env/platform_big.tscn" id="1_v8ins"]
+[ext_resource type="PackedScene" uid="uid://cu40vh5qhd46n" path="res://scenes/player.tscn" id="2_aja64"]
+[ext_resource type="PackedScene" uid="uid://khuotfqdn6ml" path="res://scenes/enemy.tscn" id="3_vrmq6"]
+[ext_resource type="PackedScene" uid="uid://e4kh3q3xch7k" path="res://scenes/items/magazine.tscn" id="4_armdg"]
+[ext_resource type="PackedScene" uid="uid://iyb1keojmn67" path="res://scenes/items/health.tscn" id="5_2h5qv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dw02t"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_4p0vm"]
+sky_material = SubResource("ProceduralSkyMaterial_dw02t")
+
+[sub_resource type="Environment" id="Environment_mgjcx"]
+background_mode = 2
+sky = SubResource("Sky_4p0vm")
+tonemap_mode = 2
+
+[node name="TestField" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.369228, 0.337151, 0, 0.674302, 0.738456, -0.5, 0.639521, -0.583963, 0, 9, 4.12481)
+shadow_enabled = true
+shadow_opacity = 0.75
+directional_shadow_mode = 0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mgjcx")
+
+[node name="PlatformBig" parent="." instance=ExtResource("1_v8ins")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.418591, 0, 0.646369)
+
+[node name="Player" parent="." instance=ExtResource("2_aja64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.864932, 1.02988, 9.16356)
+
+[node name="Enemy" parent="." instance=ExtResource("3_vrmq6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.93093, 0.5, 6.54498)
+
+[node name="Ammo" parent="." instance=ExtResource("4_armdg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 6.11632)
+
+[node name="Health" parent="." instance=ExtResource("5_2h5qv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01165, 1.6, 12.0448)

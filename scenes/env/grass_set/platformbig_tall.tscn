@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdi3kx23hvok5"]
+
+[ext_resource type="PackedScene" uid="uid://cci7f0hddv6xl" path="res://assets/grassset/PlatformBigTall.glb" id="1_tifoh"]
+[ext_resource type="Material" uid="uid://be3lxts6kupvx" path="res://materials/platformgrass.tres" id="2_03v0c"]
+
+[node name="PlatformbigTall" type="Node3D"]
+
+[node name="PlatformBigTall2" parent="." instance=ExtResource("1_tifoh")]
+
+[node name="PlatformBigTall" parent="PlatformBigTall2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.96408, 0)
+surface_material_override/0 = ExtResource("2_03v0c")
+
+[editable path="PlatformBigTall2"]

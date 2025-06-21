@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=3 uid="uid://dat37bwcghwfy"]
+
+[ext_resource type="Script" path="res://scenes/GUI/leaderboard_ui.gd" id="1_4qxmf"]
+[ext_resource type="PackedScene" uid="uid://kndt01mfbb7j" path="res://scenes/GUI/player_card.tscn" id="1_mie81"]
+
+[node name="Leaderboard" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_4qxmf")
+player_card_scene = ExtResource("1_mie81")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.5
+offset_top = -294.0
+offset_right = 248.5
+offset_bottom = 294.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="WinningTeamLabel" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer2/MarginContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "[TEAM XXX WON]"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Leaderboard" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 40
+text = "Leaderboard"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_horizontal = 4
+horizontal_scroll_mode = 0
+
+[node name="LeaderboardContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PlayerCard" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/LeaderboardContainer" instance=ExtResource("1_mie81")]
+layout_mode = 2
+
+[node name="PlayerCard2" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/LeaderboardContainer" instance=ExtResource("1_mie81")]
+layout_mode = 2

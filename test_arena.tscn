@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0ryxtpi78rf4"]
+
+[ext_resource type="PackedScene" uid="uid://cbovuek2h2l4f" path="res://assets/arena.blend" id="1_pyorg"]
+[ext_resource type="PackedScene" uid="uid://cu40vh5qhd46n" path="res://scenes/player.tscn" id="2_peqtt"]
+
+[node name="TestArena" type="Node3D"]
+
+[node name="arena" parent="." instance=ExtResource("1_pyorg")]
+
+[node name="Player" parent="." instance=ExtResource("2_peqtt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.149759, 1.12471, 0.728733)
+
+[editable path="arena"]

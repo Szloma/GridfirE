@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://digt815klus12"]
+
+[ext_resource type="PackedScene" uid="uid://8feowun5plrk" path="res://assets/weapon/Gun3.blend" id="1_eljp5"]
+[ext_resource type="Texture2D" uid="uid://df8mu23d5osgd" path="res://assets/weapon/Gun3.png" id="2_uv4a8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yowwm"]
+albedo_texture = ExtResource("2_uv4a8")
+metallic = 0.25
+
+[node name="Shotgun" type="Node3D"]
+
+[node name="Gun3" parent="." instance=ExtResource("1_eljp5")]
+
+[node name="Cube" parent="Gun3" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yowwm")
+
+[editable path="Gun3"]

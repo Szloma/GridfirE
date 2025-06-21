@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://kttsirgfnpao"]
+
+[ext_resource type="PackedScene" uid="uid://dhiemyf5h4qid" path="res://assets/grassset/SlantBigLow.glb" id="1_fwo4e"]
+[ext_resource type="Material" uid="uid://be3lxts6kupvx" path="res://materials/platformgrass.tres" id="2_xg4ru"]
+
+[node name="PlatformSlantLow" type="Node3D"]
+
+[node name="SlantBigLow2" parent="." instance=ExtResource("1_fwo4e")]
+
+[node name="SlantBigLow" parent="SlantBigLow2" index="0"]
+surface_material_override/0 = ExtResource("2_xg4ru")
+
+[editable path="SlantBigLow2"]

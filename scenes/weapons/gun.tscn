@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://driana8njv0lj"]
+
+[ext_resource type="PackedScene" uid="uid://brxatpgfkb72q" path="res://assets/weapon/Gun2.blend" id="1_2hkvy"]
+[ext_resource type="Texture2D" uid="uid://cft8wxrq836mv" path="res://assets/weapon/Gun2.png" id="2_0mxok"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_18c4w"]
+albedo_texture = ExtResource("2_0mxok")
+metallic = 0.45
+metallic_specular = 1.0
+clearcoat_enabled = true
+
+[node name="Gun" type="Node3D"]
+
+[node name="Gun2" parent="." instance=ExtResource("1_2hkvy")]
+
+[node name="Cube_001" parent="Gun2" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_18c4w")
+
+[editable path="Gun2"]

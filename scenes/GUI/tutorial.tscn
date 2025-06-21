@@ -1,0 +1,222 @@
+[gd_scene load_steps=9 format=3 uid="uid://ctcb7gt6rih8g"]
+
+[ext_resource type="Texture2D" uid="uid://dtla0jjow5ki8" path="res://testures/keyboardButtons/tab.png" id="1_5dfwi"]
+[ext_resource type="Texture2D" uid="uid://syauqnmwtyrt" path="res://testures/keyboardButtons/space.png" id="2_d3h5v"]
+[ext_resource type="Texture2D" uid="uid://4qd3rgq7ol2i" path="res://testures/keyboardButtons/awsd.png" id="3_6n2oa"]
+[ext_resource type="Texture2D" uid="uid://cim8jjep835bi" path="res://testures/keyboardButtons/t.png" id="4_k3p3e"]
+[ext_resource type="Texture2D" uid="uid://bgd15rty2hq4o" path="res://testures/keyboardButtons/esc.png" id="5_aagcs"]
+[ext_resource type="Texture2D" uid="uid://qp53nixn0en0" path="res://testures/keyboardButtons/left.png" id="6_58frt"]
+
+[sub_resource type="Gradient" id="Gradient_q533f"]
+colors = PackedColorArray(0, 0, 0, 0.584314, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kqyka"]
+gradient = SubResource("Gradient_q533f")
+fill_from = Vector2(1, 0.984756)
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1152, 234.02)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -234.02
+offset_bottom = -1.52588e-05
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture2D_kqyka")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(1152, 0)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -209.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Control6" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Shop" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/Shop"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Shop/CenterContainer3"]
+layout_mode = 2
+texture = ExtResource("1_5dfwi")
+stretch_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/Shop"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Shop/CenterContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 36
+text = "Shop
+"
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/Shop"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Shop/CenterContainer2"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 18
+text = "Near shop sign"
+
+[node name="Control5" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Jump" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/Jump"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Jump/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("2_d3h5v")
+stretch_mode = 5
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/Jump"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Jump/CenterContainer2"]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 36
+text = "Jump"
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/Jump"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Jump/CenterContainer3"]
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 18
+text = "Now featuring double jump"
+
+[node name="Control3" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Movement" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/Movement"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Movement/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("3_6n2oa")
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/Movement"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Movement/CenterContainer2"]
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 48
+text = "Movement"
+
+[node name="Control4" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Shoot" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/Shoot"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Shoot/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("6_58frt")
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/Shoot"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Shoot/CenterContainer2"]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 36
+text = "Shoot"
+
+[node name="Control2" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Tutorial" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/Tutorial"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Tutorial/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("4_k3p3e")
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/Tutorial"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Tutorial/CenterContainer2"]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 36
+text = "Tutorial"
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/Tutorial"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Tutorial/CenterContainer3"]
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 18
+text = "View it anytime"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Menu" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/Menu"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Menu/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("5_aagcs")
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/Menu"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Menu/CenterContainer2"]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 36
+text = "Menu"
+
+[node name="Control7" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

@@ -1,0 +1,143 @@
+[gd_scene load_steps=58 format=3 uid="uid://co7hvomrytuox"]
+
+[ext_resource type="PackedScene" uid="uid://d3l5rfcttq1uq" path="res://assets/Body.blend" id="1_ecwsq"]
+[ext_resource type="Script" path="res://scripts/character_skin.gd" id="1_p6rei"]
+[ext_resource type="Texture2D" uid="uid://bx0ejudt5r5jt" path="res://testures/character/eyes/eyes1.png" id="3_10spf"]
+[ext_resource type="Texture2D" uid="uid://bcinm0h5872jd" path="res://testures/character/eyes/eyes2.png" id="3_21coq"]
+[ext_resource type="Texture2D" uid="uid://dyhry7ew3k17y" path="res://testures/character/eyes/eyes3.png" id="4_mj3um"]
+[ext_resource type="Texture2D" uid="uid://qldktec4k7st" path="res://testures/character/eyes/eyes4.png" id="5_glsm7"]
+[ext_resource type="Texture2D" uid="uid://bn25en8dgbkun" path="res://testures/character/eyes/eyes5.png" id="6_hhn6o"]
+[ext_resource type="Texture2D" uid="uid://bnuohtprj80xk" path="res://testures/character/mouth/mouth10.png" id="7_f6dpj"]
+[ext_resource type="Texture2D" uid="uid://bjyahxb844qp" path="res://testures/character/eyes/eyes6.png" id="7_py5ru"]
+[ext_resource type="Texture2D" uid="uid://c7dvlyitbk4ym" path="res://testures/character/eyes/eyes7.png" id="8_tc7vh"]
+[ext_resource type="Texture2D" uid="uid://cpv0p2u2nr18l" path="res://testures/character/eyes/eyes8.png" id="9_8a4g4"]
+[ext_resource type="Texture2D" uid="uid://0cm2bkc8k43b" path="res://testures/character/eyes/eyes9.png" id="10_7msuv"]
+[ext_resource type="Texture2D" uid="uid://b0625ekgdp8rv" path="res://testures/character/eyes/eyes10.png" id="11_5c45y"]
+[ext_resource type="Texture2D" uid="uid://dep23dsk2fv4x" path="res://testures/character/eyes/eyes11.png" id="12_7l6wo"]
+[ext_resource type="Texture2D" uid="uid://bwtvm3jsstbnm" path="res://testures/character/mouth/mouth1.png" id="13_aa8jb"]
+[ext_resource type="Texture2D" uid="uid://c4800lpyailyp" path="res://testures/character/mouth/mouth2.png" id="14_yhbtw"]
+[ext_resource type="Texture2D" uid="uid://b1k526208p0al" path="res://testures/character/mouth/mouth3.png" id="15_pmix1"]
+[ext_resource type="Texture2D" uid="uid://cldk5631qusik" path="res://testures/character/mouth/mouth4.png" id="16_vola2"]
+[ext_resource type="Texture2D" uid="uid://blx7tgqyftjfn" path="res://testures/character/mouth/mouth5.png" id="17_c0ens"]
+[ext_resource type="Texture2D" uid="uid://d1gsd60v0qdu0" path="res://testures/character/mouth/mouth6.png" id="18_rcll3"]
+[ext_resource type="Texture2D" uid="uid://dfu3fsl7e81yj" path="res://testures/character/mouth/mouth7.png" id="19_hwdgt"]
+[ext_resource type="Texture2D" uid="uid://cgr8fqv2yadpi" path="res://testures/character/mouth/mouth8.png" id="20_jyp4h"]
+[ext_resource type="Texture2D" uid="uid://1w47wlbehguw" path="res://testures/character/mouth/mouth9.png" id="21_jeft3"]
+[ext_resource type="Texture2D" uid="uid://ddexwkgf0h330" path="res://testures/character/eyebrows/eyebrows1.png" id="23_77ql8"]
+[ext_resource type="Texture2D" uid="uid://cx7ftsn4tcov1" path="res://testures/character/eyebrows/eyebrows2.png" id="24_ufop6"]
+[ext_resource type="Texture2D" uid="uid://bj4k201ij2c8m" path="res://testures/character/eyebrows/eyebrows3.png" id="25_uvq74"]
+[ext_resource type="Texture2D" uid="uid://sjadqpmch7yi" path="res://testures/character/eyebrows/eyebrows4.png" id="26_3elr7"]
+[ext_resource type="Texture2D" uid="uid://y7hkltkrnar5" path="res://testures/character/eyebrows/eyebrows5.png" id="27_eu64a"]
+[ext_resource type="Texture2D" uid="uid://g2ltsg4652wl" path="res://testures/character/eyebrows/eyebrows8.png" id="28_gemuh"]
+[ext_resource type="Texture2D" uid="uid://dvetp2ldh0l0i" path="res://testures/character/eyebrows/eyebrows6.png" id="28_we5r3"]
+[ext_resource type="Texture2D" uid="uid://dbao1dtsahvxv" path="res://testures/character/eyebrows/eyebrows7.png" id="29_jia70"]
+[ext_resource type="ArrayMesh" uid="uid://8eakvi2pimns" path="res://assets/Accessory/antennas.res" id="31_bk4yl"]
+[ext_resource type="ArrayMesh" uid="uid://bgmwjjxw8xr8j" path="res://assets/Accessory/catears.res" id="32_qpr08"]
+[ext_resource type="ArrayMesh" uid="uid://c6lwunfvw3ql1" path="res://assets/Accessory/exclamation.res" id="33_8s48o"]
+[ext_resource type="ArrayMesh" uid="uid://bj8e1t3gmnw1q" path="res://assets/Accessory/glasses.res" id="34_0schm"]
+[ext_resource type="ArrayMesh" uid="uid://b610cymv6i6yl" path="res://assets/Accessory/headphones.res" id="35_3xvau"]
+[ext_resource type="ArrayMesh" uid="uid://ch7rp3eqhsqfu" path="res://assets/Hair/hair1.res" id="36_dga1e"]
+[ext_resource type="ArrayMesh" uid="uid://cbf5fb67ete1b" path="res://assets/Hair/hair2.res" id="37_6xevx"]
+[ext_resource type="ArrayMesh" uid="uid://dy14v1njsrf3i" path="res://assets/Hair/hair3.res" id="38_yfsml"]
+[ext_resource type="ArrayMesh" uid="uid://s334fad3yk5l" path="res://assets/Hair/hair4.res" id="39_wpict"]
+[ext_resource type="Texture2D" uid="uid://d04pyxs0dqypu" path="res://testures/character/body/Body1.png" id="40_fmc5p"]
+[ext_resource type="Texture2D" uid="uid://wdcu3e61m1yu" path="res://testures/character/body/Body2.png" id="41_x7og6"]
+[ext_resource type="Material" uid="uid://cif45re1j3smj" path="res://materials/Body.tres" id="42_k3joq"]
+[ext_resource type="Texture2D" uid="uid://bod8467f108w6" path="res://testures/character/body/Body3.png" id="42_o2blj"]
+[ext_resource type="Texture2D" uid="uid://lcrel6mpdupc" path="res://assets/hair1.png" id="43_1kabj"]
+[ext_resource type="Texture2D" uid="uid://c2orwlr17r4pc" path="res://assets/Hair2.png" id="44_fijmt"]
+[ext_resource type="Texture2D" uid="uid://gavaqoufhxyn" path="res://assets/Hair3.png" id="45_g2edk"]
+[ext_resource type="Texture2D" uid="uid://y13010ldn3g6" path="res://assets/Hair4.png" id="46_q1job"]
+[ext_resource type="Texture2D" uid="uid://d0cpqqdnvjyqx" path="res://assets/Antennas.png" id="47_7rpte"]
+[ext_resource type="Texture2D" uid="uid://byu1ori3ho0ap" path="res://assets/Ears.png" id="48_u5uhd"]
+[ext_resource type="Texture2D" uid="uid://b4htocwa0pit5" path="res://assets/Exclamation.png" id="49_p3mtc"]
+[ext_resource type="Texture2D" uid="uid://djkjyq3j10cmk" path="res://assets/glasses.png" id="50_mbx07"]
+[ext_resource type="Texture2D" uid="uid://yvubpargky7j" path="res://assets/Headphones.png" id="51_i21bm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wod0l"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = ExtResource("3_10spf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0lug"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = ExtResource("7_f6dpj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ts1de"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = ExtResource("28_gemuh")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_t16m8"]
+viewport_path = NodePath("SubViewport")
+
+[node name="BaseBody" type="Node3D"]
+script = ExtResource("1_p6rei")
+eye_textures = Array[Texture2D]([ExtResource("3_10spf"), ExtResource("3_21coq"), ExtResource("4_mj3um"), ExtResource("5_glsm7"), ExtResource("6_hhn6o"), ExtResource("7_py5ru"), ExtResource("8_tc7vh"), ExtResource("9_8a4g4"), ExtResource("10_7msuv"), ExtResource("11_5c45y"), ExtResource("12_7l6wo")])
+mouth_textures = Array[Texture2D]([ExtResource("13_aa8jb"), ExtResource("14_yhbtw"), ExtResource("15_pmix1"), ExtResource("16_vola2"), ExtResource("17_c0ens"), ExtResource("18_rcll3"), ExtResource("19_hwdgt"), ExtResource("20_jyp4h"), ExtResource("21_jeft3"), ExtResource("7_f6dpj")])
+eyebrows_textures = Array[Texture2D]([ExtResource("23_77ql8"), ExtResource("24_ufop6"), ExtResource("25_uvq74"), ExtResource("26_3elr7"), ExtResource("27_eu64a"), ExtResource("28_we5r3"), ExtResource("29_jia70"), ExtResource("28_gemuh")])
+accesory_scenes = Array[Mesh]([ExtResource("31_bk4yl"), ExtResource("32_qpr08"), ExtResource("33_8s48o"), ExtResource("34_0schm"), ExtResource("35_3xvau")])
+hair_scenes = Array[Mesh]([ExtResource("36_dga1e"), ExtResource("37_6xevx"), ExtResource("38_yfsml"), ExtResource("39_wpict")])
+body_textures = Array[Texture2D]([ExtResource("40_fmc5p"), ExtResource("41_x7og6"), ExtResource("42_o2blj")])
+hair_textures = Array[Texture2D]([ExtResource("43_1kabj"), ExtResource("44_fijmt"), ExtResource("45_g2edk"), ExtResource("46_q1job")])
+accessory_textures = Array[Texture2D]([ExtResource("47_7rpte"), ExtResource("48_u5uhd"), ExtResource("49_p3mtc"), ExtResource("50_mbx07"), ExtResource("51_i21bm")])
+
+[node name="Body" parent="." instance=ExtResource("1_ecwsq")]
+
+[node name="Head" parent="Body" index="0"]
+surface_material_override/0 = ExtResource("42_k3joq")
+
+[node name="handright" parent="Body" index="1"]
+surface_material_override/0 = ExtResource("42_k3joq")
+
+[node name="Body" parent="Body" index="2"]
+surface_material_override/0 = ExtResource("42_k3joq")
+
+[node name="handleft" parent="Body" index="3"]
+surface_material_override/0 = ExtResource("42_k3joq")
+
+[node name="Eyes" parent="Body" index="4"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1.21349, 0.356111)
+surface_material_override/0 = SubResource("StandardMaterial3D_wod0l")
+
+[node name="Mouth" parent="Body" index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_j0lug")
+
+[node name="Eyebrows" parent="Body" index="6"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1.31515, 0.345194)
+surface_material_override/0 = SubResource("StandardMaterial3D_ts1de")
+
+[node name="Accessory" type="MeshInstance3D" parent="."]
+
+[node name="Hair" type="MeshInstance3D" parent="."]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(256, 128)
+
+[node name="Label" type="Label" parent="SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -11.5
+offset_right = 29.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 40
+text = "[NAME]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NameSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_t16m8")
+
+[editable path="Body"]

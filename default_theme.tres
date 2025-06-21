@@ -1,0 +1,81 @@
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://006qx06xkcjt"]
+
+[ext_resource type="FontFile" uid="uid://3ta1cbodvkjw" path="res://font/Coiny,Lalezar/Lalezar/Lalezar-Regular.ttf" id="1_q67to"]
+[ext_resource type="Texture2D" uid="uid://cw1738n3xbit2" path="res://testures/GUI_SVG/ButtonDefault.svg" id="1_vlvmw"]
+[ext_resource type="Texture2D" uid="uid://b66oho10qis4s" path="res://testures/GUI_SVG/ButtonPressed.svg" id="2_4v211"]
+[ext_resource type="Texture2D" uid="uid://bxkmh36lsntp6" path="res://testures/GUI_SVG/NextPressed.svg" id="5_kfqki"]
+[ext_resource type="Texture2D" uid="uid://dw5jefowwt0ih" path="res://testures/GUI_SVG/9PatchRect.svg" id="6_d77df"]
+[ext_resource type="Texture2D" uid="uid://c8s860b2qdlcu" path="res://testures/GUI_SVG/NextDefault-1.svg" id="6_vbcjo"]
+[ext_resource type="Texture2D" uid="uid://bfavalov017n2" path="res://testures/GUI_SVG/9PatchRect-2.svg" id="7_n8vk6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3kj77"]
+texture = ExtResource("1_vlvmw")
+texture_margin_left = 25.0
+texture_margin_top = 25.0
+texture_margin_right = 25.0
+texture_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lbobc"]
+texture = ExtResource("2_4v211")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vmqn8"]
+texture = ExtResource("1_vlvmw")
+texture_margin_left = 25.0
+texture_margin_top = 25.0
+texture_margin_right = 25.0
+texture_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fgugt"]
+texture = ExtResource("5_kfqki")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6nhgm"]
+texture = ExtResource("6_d77df")
+texture_margin_left = 25.0
+texture_margin_top = 25.0
+texture_margin_right = 25.0
+texture_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_daq7y"]
+texture = ExtResource("6_vbcjo")
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ygkfm"]
+texture = ExtResource("7_n8vk6")
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xnmt1"]
+texture = ExtResource("6_vbcjo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_carko"]
+texture = ExtResource("7_n8vk6")
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[resource]
+default_font = ExtResource("1_q67to")
+Button/styles/disabled = SubResource("StyleBoxTexture_3kj77")
+Button/styles/hover = SubResource("StyleBoxTexture_lbobc")
+Button/styles/normal = SubResource("StyleBoxTexture_vmqn8")
+Button/styles/pressed = SubResource("StyleBoxTexture_fgugt")
+Label/font_sizes/font_size = 24
+Panel/styles/panel = SubResource("StyleBoxTexture_6nhgm")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_daq7y")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_ygkfm")
+VSlider/styles/grabber_area = SubResource("StyleBoxTexture_xnmt1")
+VSlider/styles/slider = SubResource("StyleBoxTexture_carko")

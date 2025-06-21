@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://lhljlpmo288k"]
+
+[ext_resource type="PackedScene" uid="uid://dgwp5rjcmptua" path="res://assets/sign.blend" id="1_yjlhm"]
+[ext_resource type="Material" uid="uid://olakxexc0fus" path="res://materials/Blue.tres" id="2_wqfq5"]
+[ext_resource type="Material" uid="uid://cf8ej1ltt160g" path="res://materials/gray.tres" id="3_nudv5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6fgvo"]
+albedo_color = Color(0.999997, 0.309116, 0.364582, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+
+[node name="Sign" type="Node3D"]
+
+[node name="sign" parent="." instance=ExtResource("1_yjlhm")]
+
+[node name="Cube" parent="sign" index="0"]
+material_override = ExtResource("2_wqfq5")
+
+[node name="Text" parent="sign" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6fgvo")
+
+[node name="Cylinder" parent="sign" index="2"]
+material_override = ExtResource("3_nudv5")
+
+[node name="Cube_001" parent="sign" index="4"]
+material_override = ExtResource("3_nudv5")
+
+[editable path="sign"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6gfq8ihyjpmj"]
+
+[ext_resource type="PackedScene" uid="uid://ba8hc8jbcvrnm" path="res://assets/grassset/PlatformMediumMedium.glb" id="1_5kjpn"]
+[ext_resource type="Material" uid="uid://be3lxts6kupvx" path="res://materials/platformgrass.tres" id="2_sy42h"]
+
+[node name="PlatformMediumMedium" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95777, 0)
+
+[node name="PlatformMediumMedium2" parent="." instance=ExtResource("1_5kjpn")]
+
+[node name="PlatformMediumMedium" parent="PlatformMediumMedium2" index="0"]
+surface_material_override/0 = ExtResource("2_sy42h")
+
+[editable path="PlatformMediumMedium2"]

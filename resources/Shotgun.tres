@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=4 format=3 uid="uid://bkshk3nrv1iar"]
+
+[ext_resource type="Texture2D" uid="uid://h4ki6waw7oam" path="res://testures/weapon_preview/shotgun_icon.png" id="1_nvyjd"]
+[ext_resource type="PackedScene" uid="uid://digt815klus12" path="res://scenes/weapons/Shotgun.tscn" id="1_own7o"]
+[ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="2_txj8d"]
+
+[resource]
+script = ExtResource("2_txj8d")
+model = ExtResource("1_own7o")
+muzzle_position = Vector3(0, 0, 0)
+name = "Shotgun"
+cooldown = 0.5
+max_distance = 10
+damage = 15.0
+spread = 0.485
+shot_count = 15
+knockback = 20
+price = 10
+icon = ExtResource("1_nvyjd")
+sound_shoot = "res://sounds/laser-shotgun.mp3"

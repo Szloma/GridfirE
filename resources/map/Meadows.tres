@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MapResource" load_steps=4 format=3 uid="uid://crwvae06wjh6"]
+
+[ext_resource type="Script" path="res://scripts/map_resource.gd" id="1_grxw1"]
+[ext_resource type="Texture2D" uid="uid://bnpuvyqg1d1u0" path="res://testures/map_preview/meadow_icon.png" id="1_wjm1c"]
+[ext_resource type="PackedScene" uid="uid://djxrsxcryn7ix" path="res://scenes/maps/meadows.tscn" id="2_ebiad"]
+
+[resource]
+script = ExtResource("1_grxw1")
+name = "Meadows"
+scene = ExtResource("2_ebiad")
+preview_image = ExtResource("1_wjm1c")
+team_names = Array[String](["Red", "Green"])
+rotation = 35.5

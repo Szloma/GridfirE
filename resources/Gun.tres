@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=4 format=3 uid="uid://ckerrw0o3iwvt"]
+
+[ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_0pu77"]
+[ext_resource type="Texture2D" uid="uid://cjrwjke53fr3v" path="res://testures/weapon_preview/gun_icon.png" id="1_i0yly"]
+[ext_resource type="PackedScene" uid="uid://driana8njv0lj" path="res://scenes/weapons/gun.tscn" id="1_octob"]
+
+[resource]
+script = ExtResource("1_0pu77")
+model = ExtResource("1_octob")
+muzzle_position = Vector3(0, 0, 0)
+name = "Gun"
+cooldown = 0.4
+max_distance = 10
+damage = 5.0
+spread = 0.5
+shot_count = 30
+knockback = 20
+price = 5
+icon = ExtResource("1_i0yly")
+sound_shoot = "res://sounds/laser-gun.mp3"

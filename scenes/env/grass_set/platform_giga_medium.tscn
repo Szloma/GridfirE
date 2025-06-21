@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c01du4nvcr705"]
+
+[ext_resource type="PackedScene" uid="uid://bq77yssoaeo2n" path="res://assets/grassset/PlatformGigaMediumSize.glb" id="1_dody2"]
+[ext_resource type="Material" uid="uid://be3lxts6kupvx" path="res://materials/platformgrass.tres" id="2_s3u80"]
+
+[node name="PlatformGigaMedium" type="Node3D"]
+
+[node name="PlatformGigaMediumSize2" parent="." instance=ExtResource("1_dody2")]
+
+[node name="PlatformGigaMediumSize" parent="PlatformGigaMediumSize2" index="0"]
+surface_material_override/0 = ExtResource("2_s3u80")
+
+[editable path="PlatformGigaMediumSize2"]

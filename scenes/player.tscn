@@ -1,0 +1,195 @@
+[gd_scene load_steps=28 format=3 uid="uid://cu40vh5qhd46n"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_2h566"]
+[ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="2_t2fsp"]
+[ext_resource type="Resource" uid="uid://ckerrw0o3iwvt" path="res://resources/Gun.tres" id="3_wsq8m"]
+[ext_resource type="Resource" uid="uid://cku8eyld3awys" path="res://resources/Machinegun.tres" id="4_fvd4w"]
+[ext_resource type="Texture2D" uid="uid://cne30cwkcee2s" path="res://testures/flashTexture.png" id="5_ccyjr"]
+[ext_resource type="PackedScene" uid="uid://co7hvomrytuox" path="res://scenes/character/BaseBody.tscn" id="5_jgcwp"]
+[ext_resource type="Resource" uid="uid://bkshk3nrv1iar" path="res://resources/Shotgun.tres" id="5_o03wg"]
+[ext_resource type="Texture2D" uid="uid://d04pyxs0dqypu" path="res://testures/character/body/Body1.png" id="6_mleym"]
+[ext_resource type="Texture2D" uid="uid://bx0ejudt5r5jt" path="res://testures/character/eyes/eyes1.png" id="7_qaex3"]
+[ext_resource type="PackedScene" uid="uid://btqx5nlqe3lcs" path="res://scenes/character/ghost.tscn" id="7_v1thd"]
+[ext_resource type="Texture2D" uid="uid://bnuohtprj80xk" path="res://testures/character/mouth/mouth10.png" id="8_kdvwq"]
+[ext_resource type="Texture2D" uid="uid://g2ltsg4652wl" path="res://testures/character/eyebrows/eyebrows8.png" id="9_aea00"]
+[ext_resource type="Texture2D" uid="uid://bi4qn4cw5ae7j" path="res://testures/flashTexture3.png" id="11_4gkuf"]
+[ext_resource type="Texture2D" uid="uid://g12iqja3eu5y" path="res://testures/flashTexture2.png" id="11_mue35"]
+[ext_resource type="PackedScene" uid="uid://byn6wxprdlskt" path="res://scenes/shadow.tscn" id="12_swr8n"]
+[ext_resource type="Texture2D" uid="uid://b7ry6t1b2vpi6" path="res://testures/flashTexture4.png" id="14_jhfwj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_crsmt"]
+height = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vi6e6"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("6_mleym")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhfwj"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("6_mleym")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ap0k"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = ExtResource("7_qaex3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wxb4w"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = ExtResource("8_kdvwq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h1bdt"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = ExtResource("9_aea00")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4fjh4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_4gkuf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mue35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ccyjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jhfwj")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 25.0
+}]
+
+[sub_resource type="BoxMesh" id="BoxMesh_afn8m"]
+resource_local_to_scene = true
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="Curve" id="Curve_cbqfg"]
+_data = [Vector2(0.0687023, 0), 0.0, 0.0, 0, 0, Vector2(0.229008, 1), 0.0, 0.0, 0, 0, Vector2(0.748092, 0.156646), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="SphereMesh" id="SphereMesh_m12hm"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_3a274"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("CharacterSkin:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[node name="Player" type="CharacterBody3D" groups=["players"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0196733, 0.023653, -0.0183654)
+collision_mask = 3
+script = ExtResource("1_2h566")
+hit_sound_effects = Array[String](["res://sounds/hit1.mp3", "res://sounds/hit3.mp3", "res://sounds/hit4.mp3", "res://sounds/hit5.mp3"])
+weapons = Array[ExtResource("2_t2fsp")]([ExtResource("3_wsq8m"), ExtResource("4_fvd4w"), ExtResource("5_o03wg")])
+
+[node name="Aimcast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01018, 0)
+target_position = Vector3(0, 0, -20)
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("CapsuleShape3D_crsmt")
+
+[node name="CharacterSkin" type="Node3D" parent="."]
+
+[node name="BaseBody" parent="CharacterSkin" instance=ExtResource("5_jgcwp")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
+
+[node name="Head" parent="CharacterSkin/BaseBody/Body" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vi6e6")
+
+[node name="handright" parent="CharacterSkin/BaseBody/Body" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_jhfwj")
+
+[node name="Body" parent="CharacterSkin/BaseBody/Body" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vi6e6")
+
+[node name="handleft" parent="CharacterSkin/BaseBody/Body" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_jhfwj")
+
+[node name="Eyes" parent="CharacterSkin/BaseBody/Body" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_3ap0k")
+
+[node name="Mouth" parent="CharacterSkin/BaseBody/Body" index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wxb4w")
+
+[node name="Eyebrows" parent="CharacterSkin/BaseBody/Body" index="6"]
+surface_material_override/0 = SubResource("StandardMaterial3D_h1bdt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterSkin"]
+
+[node name="MuzzleFlash" type="AnimatedSprite3D" parent="CharacterSkin"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.55905, 0.80333, -0.394039)
+sprite_frames = SubResource("SpriteFrames_4fjh4")
+
+[node name="WeaponContainer" type="Node3D" parent="CharacterSkin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55905, 0.90333, 0)
+
+[node name="ghost" parent="CharacterSkin" instance=ExtResource("7_v1thd")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.784614, 0)
+visible = false
+
+[node name="ParticleTrail" type="CPUParticles3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_afn8m")
+emission_shape = 1
+emission_sphere_radius = 0.3
+particle_flag_align_y = true
+gravity = Vector3(0, -3, 0)
+initial_velocity_min = 0.04
+initial_velocity_max = 3.0
+radial_accel_min = 0.2
+radial_accel_max = 0.2
+tangential_accel_min = -2.65
+tangential_accel_max = 7.09
+scale_amount_min = 0.75
+scale_amount_curve = SubResource("Curve_cbqfg")
+
+[node name="SoundFootsteps" type="AudioStreamPlayer" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 8.74227e-08, 4.9738e-14, -7.16125e-08, 0.819152, 0.573577, -5.01436e-08, 0.573577, -0.819152, 0, 4.36401, -4.5)
+projection = 1
+size = 9.744
+near = 0.001
+far = 400.0
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -5)
+
+[node name="CameraTarget" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.16242, -4.3)
+
+[node name="Cooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="Pointer" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_m12hm")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_3a274")
+
+[node name="ReviveTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Shadow" parent="." instance=ExtResource("12_swr8n")]
+
+[node name="ShadowCast" type="RayCast3D" parent="."]
+target_position = Vector3(0, -5, 0)
+
+[connection signal="timeout" from="ReviveTimer" to="." method="_on_revive_timer_timeout"]
+
+[editable path="CharacterSkin/BaseBody"]
+[editable path="CharacterSkin/BaseBody/Body"]

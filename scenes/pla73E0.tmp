@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://cu40vh5qhd46n"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_2h566"]
+[ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="2_t2fsp"]
+[ext_resource type="Resource" uid="uid://ckerrw0o3iwvt" path="res://resources/Gun.tres" id="3_wsq8m"]
+[ext_resource type="Resource" uid="uid://cku8eyld3awys" path="res://resources/Machinegun.tres" id="4_fvd4w"]
+[ext_resource type="Texture2D" uid="uid://cne30cwkcee2s" path="res://testures/flashTexture.png" id="5_ccyjr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_crsmt"]
+height = 1.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6qs27"]
+height = 1.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_2tuwc"]
+size = Vector3(0.1, 1, 0.4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4fjh4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ccyjr")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_2h566")
+weapons = Array[ExtResource("2_t2fsp")]([ExtResource("3_wsq8m"), ExtResource("4_fvd4w")])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("CapsuleShape3D_crsmt")
+
+[node name="CharacterSkin" type="Node3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterSkin"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterSkin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+mesh = SubResource("CapsuleMesh_6qs27")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="CharacterSkin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10474, 0.276358)
+mesh = SubResource("BoxMesh_2tuwc")
+
+[node name="MuzzleFlash" type="AnimatedSprite3D" parent="CharacterSkin"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.55905, 2.00333, -0.453648)
+sprite_frames = SubResource("SpriteFrames_4fjh4")
+
+[node name="WeaponContainer" type="Node3D" parent="CharacterSkin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55905, 2.00333, 0)
+
+[node name="Aimcast" type="RayCast3D" parent="CharacterSkin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01018, 0)
+target_position = Vector3(0, 0, -100)
+
+[node name="ParticleTrail" type="CPUParticles3D" parent="."]
+
+[node name="SoundFootsteps" type="AudioStreamPlayer" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, -8.74228e-08, 3.55271e-15, 7.09946e-08, 0.812084, 0.583541, 5.10148e-08, 0.583541, -0.812084, 0, 4.62426, -4.27799)
+projection = 1
+size = 10.0
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -10)
+
+[node name="CameraTarget" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8, -4.3)
+
+[node name="Cooldown" type="Timer" parent="."]
+one_shot = true

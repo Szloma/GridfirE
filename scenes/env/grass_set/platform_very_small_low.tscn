@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8kaqkfbx1p3e"]
+
+[ext_resource type="PackedScene" uid="uid://b8wog6txuyxeh" path="res://assets/grassset/PlatformVerySmallLow.glb" id="1_mut00"]
+[ext_resource type="Material" uid="uid://be3lxts6kupvx" path="res://materials/platformgrass.tres" id="2_qvpo7"]
+
+[node name="PlatformVerySmallLow" type="Node3D"]
+
+[node name="PlatformVerySmallLow2" parent="." instance=ExtResource("1_mut00")]
+
+[node name="PlatformVerySmallLow" parent="PlatformVerySmallLow2" index="0"]
+surface_material_override/0 = ExtResource("2_qvpo7")
+
+[editable path="PlatformVerySmallLow2"]

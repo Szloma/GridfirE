@@ -1,0 +1,171 @@
+[gd_scene load_steps=6 format=3 uid="uid://di0mfvjaum04o"]
+
+[ext_resource type="Texture2D" uid="uid://3kdb2hb5knuf" path="res://testures/Buttons/BackDefault.png" id="1_0bp67"]
+[ext_resource type="Script" path="res://scripts/GUI/credits.gd" id="1_ghjao"]
+[ext_resource type="Texture2D" uid="uid://rn8ktm1mhnia" path="res://testures/Buttons/BackPressed.png" id="2_hgycv"]
+[ext_resource type="Texture2D" uid="uid://dbwwmmpc7qm1l" path="res://testures/Buttons/BackHover.png" id="3_r1w74"]
+[ext_resource type="Texture2D" uid="uid://d0db48y8djbxd" path="res://testures/Buttons/BackSelected.png" id="4_es52g"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ghjao")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.5
+offset_top = -296.0
+offset_right = 170.5
+offset_bottom = 296.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer"]
+layout_mode = 2
+
+[node name="Audio" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer/Audio"]
+layout_mode = 2
+text = "Audio Effects"
+
+[node name="LinkButton" type="LinkButton" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer/Audio"]
+layout_mode = 2
+text = "pixabay.com"
+underline = 1
+uri = "https://www.pixabay.com"
+
+[node name="Code" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer/Code"]
+layout_mode = 2
+text = "Code"
+
+[node name="LinkButton" type="LinkButton" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer/Code"]
+layout_mode = 2
+text = "kenney.nl/games"
+underline = 1
+uri = "https://www.kenney.nl/games"
+
+[node name="LinkButton2" type="LinkButton" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer/Code"]
+layout_mode = 2
+text = "kidscancode.com"
+underline = 1
+uri = "https://www.kidscancode.com"
+
+[node name="LinkButton3" type="LinkButton" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer/Code"]
+layout_mode = 2
+text = "docs.godotengine.org/en"
+underline = 1
+uri = "https://docs.godotengine.org/en/latest/"
+
+[node name="Textures" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer/Textures"]
+layout_mode = 2
+text = "Textures"
+
+[node name="LinkButton" type="LinkButton" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer/Textures"]
+layout_mode = 2
+text = "jetelly.com"
+underline = 1
+uri = "https://www.jetelly.com"
+
+[node name="LinkButton2" type="LinkButton" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer/Textures"]
+layout_mode = 2
+text = "AllSkyFree"
+underline = 1
+uri = "https://github.com/marinho/godot-visual-effects"
+
+[node name="Addons" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Addons" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer/Addons"]
+layout_mode = 2
+text = "Addons
+"
+
+[node name="LinkButton" type="LinkButton" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer/Addons"]
+layout_mode = 2
+text = "RPCawait"
+underline = 1
+uri = "https://github.com/dominiks/rpc-await"
+
+[node name="LinkButton2" type="LinkButton" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer/Addons"]
+layout_mode = 2
+text = "LocalStoragePlugin"
+underline = 1
+uri = "https://github.com/Desssuka/LocalStoragePlugin"
+
+[node name="Shaders" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer/Shaders"]
+layout_mode = 2
+text = "Shaders"
+
+[node name="LinkButton" type="LinkButton" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer/Shaders"]
+layout_mode = 2
+text = "Water shader"
+underline = 1
+uri = "https://godotshaders.com/shader/wind-waker-water-no-textures-needed/"
+
+[node name="LinkButton2" type="LinkButton" parent="MarginContainer/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer/Shaders"]
+layout_mode = 2
+text = "Godot Visual Effects"
+underline = 1
+uri = "https://github.com/marinho/godot-visual-effects"
+
+[node name="Control2" type="Control" parent="MarginContainer/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("1_0bp67")
+texture_pressed = ExtResource("2_hgycv")
+texture_hover = ExtResource("3_r1w74")
+texture_focused = ExtResource("4_es52g")
+
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer2/TextureButton" to="." method="_on_texture_button_pressed"]

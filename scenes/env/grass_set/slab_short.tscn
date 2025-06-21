@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://grqcx3ghldmt"]
+
+[ext_resource type="PackedScene" uid="uid://daga82oshhls4" path="res://assets/grassset/SlabShort.glb" id="1_7genw"]
+[ext_resource type="Material" uid="uid://8iy4w1i12ti3" path="res://materials/slab_normal.tres" id="2_nci2u"]
+
+[node name="SlabShort" type="Node3D"]
+
+[node name="SlabShort2" parent="." instance=ExtResource("1_7genw")]
+
+[node name="SlabShort" parent="SlabShort2" index="0"]
+surface_material_override/0 = ExtResource("2_nci2u")
+
+[editable path="SlabShort2"]

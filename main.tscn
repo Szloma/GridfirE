@@ -1,0 +1,329 @@
+[gd_scene load_steps=41 format=3 uid="uid://cikwk55kiytw7"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_h13ga"]
+[ext_resource type="PackedScene" uid="uid://cu40vh5qhd46n" path="res://scenes/player.tscn" id="2_6ej3r"]
+[ext_resource type="PackedScene" uid="uid://dnu30hiwkyirr" path="res://scenes/character_creator.tscn" id="2_dy7iq"]
+[ext_resource type="Shader" path="res://shaders/sepia.gdshader" id="3_l71qc"]
+[ext_resource type="Script" path="res://scripts/effects.gd" id="3_s4p0r"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="4_jqyau"]
+[ext_resource type="Texture2D" uid="uid://364iqj8sydml" path="res://testures/crosshair.png" id="4_ubu35"]
+[ext_resource type="Script" path="res://scripts/player_spawner.gd" id="6_j3j2i"]
+[ext_resource type="Script" path="res://scripts/time_left.gd" id="7_jcgvh"]
+[ext_resource type="Texture2D" uid="uid://27pgkn7b3mye" path="res://testures/Buttons/HPBarUnder.png" id="8_5svxx"]
+[ext_resource type="Script" path="res://scripts/map_spawner.gd" id="8_f035o"]
+[ext_resource type="Texture2D" uid="uid://cjq3xmydnuhui" path="res://testures/you_died.png" id="8_i5elq"]
+[ext_resource type="Texture2D" uid="uid://im5sj8rh45u4" path="res://testures/Buttons/HPBarOver.png" id="9_fsmmh"]
+[ext_resource type="Texture2D" uid="uid://cy7tvgan0k33g" path="res://testures/Buttons/HPBarProgress.png" id="10_2rd6k"]
+[ext_resource type="PackedScene" uid="uid://c5aibo2ja4co0" path="res://scenes/GUI/MainMenu.tscn" id="10_dlhfp"]
+[ext_resource type="Script" path="res://scripts/items_spawner.gd" id="11_5ajcq"]
+[ext_resource type="Script" path="res://scripts/server_controller.gd" id="11_k83tb"]
+[ext_resource type="Script" path="res://scripts/map_resource.gd" id="11_o108o"]
+[ext_resource type="Script" path="res://scripts/client_controller.gd" id="12_aighc"]
+[ext_resource type="PackedScene" uid="uid://iyb1keojmn67" path="res://scenes/items/health.tscn" id="12_q3kba"]
+[ext_resource type="Texture2D" uid="uid://b20g5flqdrd50" path="res://testures/GUI_SVG/Coin.svg" id="13_2xuhq"]
+[ext_resource type="PackedScene" uid="uid://e4kh3q3xch7k" path="res://scenes/items/magazine.tscn" id="13_frq8b"]
+[ext_resource type="Script" path="res://scripts/team_manager.gd" id="14_22j3t"]
+[ext_resource type="PackedScene" uid="uid://crk1kscse6u4h" path="res://scenes/GUI/vote_ui.tscn" id="16_35qch"]
+[ext_resource type="PackedScene" uid="uid://bqxs13fhqnjac" path="res://scenes/GUI/vote_card.tscn" id="17_h84mx"]
+[ext_resource type="Resource" uid="uid://crwvae06wjh6" path="res://resources/map/Meadows.tres" id="17_qaxfm"]
+[ext_resource type="Resource" uid="uid://gkhmjsqpnvo4" path="res://resources/map/Area.tres" id="17_tsjuu"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="20_eidb2"]
+[ext_resource type="Script" path="res://scripts/map_wrapper.gd" id="20_umwhe"]
+[ext_resource type="Theme" uid="uid://006qx06xkcjt" path="res://default_theme.tres" id="22_oyk58"]
+[ext_resource type="PackedScene" uid="uid://dat37bwcghwfy" path="res://scenes/GUI/leaderboard.tscn" id="24_6wraw"]
+[ext_resource type="PackedScene" uid="uid://b0wyehokqgku5" path="res://scenes/GUI/background.tscn" id="24_148nf"]
+[ext_resource type="PackedScene" uid="uid://ldm73oh0j3sb" path="res://scenes/GUI/options.tscn" id="25_0x4sv"]
+[ext_resource type="PackedScene" uid="uid://ctcb7gt6rih8g" path="res://scenes/GUI/tutorial.tscn" id="25_q6yt8"]
+[ext_resource type="PackedScene" uid="uid://dn5anqfde4uou" path="res://scenes/GUI/ingame_menu.tscn" id="26_6dtpu"]
+[ext_resource type="Script" path="res://scripts/leaderboard.gd" id="28_evcw1"]
+[ext_resource type="PackedScene" uid="uid://op338m2rcsvg" path="res://scenes/GUI/shop.tscn" id="29_mnu2b"]
+[ext_resource type="PackedScene" uid="uid://di0mfvjaum04o" path="res://scenes/GUI/credits.tscn" id="31_j4xef"]
+[ext_resource type="Script" path="res://scripts/music_manager.gd" id="31_lf8x2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7kki0"]
+shader = ExtResource("3_l71qc")
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_h13ga")
+character_creator_scene = ExtResource("2_dy7iq")
+
+[node name="Effects" type="CanvasLayer" parent="."]
+script = ExtResource("3_s4p0r")
+
+[node name="Sepia" type="ColorRect" parent="Effects"]
+visible = false
+material = SubResource("ShaderMaterial_7kki0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("4_jqyau")
+
+[node name="Crosshair" type="TextureRect" parent="HUD" groups=["crosshair"]]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("4_ubu35")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -101.0
+offset_right = 527.0
+offset_bottom = 100.0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("22_oyk58")
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="VBoxContainer" parent="HUD/MarginContainer"]
+layout_mode = 2
+
+[node name="Ammo" type="Label" parent="HUD/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 80
+text = "0/0"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="HUD/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 53.0
+texture_under = ExtResource("8_5svxx")
+texture_over = ExtResource("9_fsmmh")
+texture_progress = ExtResource("10_2rd6k")
+
+[node name="MarginContainer2" type="MarginContainer" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.5
+offset_right = 20.5
+offset_bottom = 40.0
+grow_horizontal = 2
+theme = ExtResource("22_oyk58")
+theme_override_constants/margin_top = 5
+
+[node name="Panel" type="Panel" parent="HUD/MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/MarginContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="TimeLeft" type="Label" parent="HUD/MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+text = "00:00"
+script = ExtResource("7_jcgvh")
+
+[node name="TimeToRespawn" type="Label" parent="HUD/MarginContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/outline_size = 6
+text = "00:00"
+horizontal_alignment = 1
+
+[node name="YouDied" type="TextureRect" parent="HUD"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -418.0
+offset_top = -164.0
+offset_right = 1211.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_i5elq")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="MarginContainer3" type="MarginContainer" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("22_oyk58")
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD/MarginContainer3"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HUD/MarginContainer3/CenterContainer"]
+custom_minimum_size = Vector2(44, 44)
+layout_mode = 2
+texture = ExtResource("13_2xuhq")
+expand_mode = 2
+
+[node name="CoinLabel" type="Label" parent="HUD/MarginContainer3/CenterContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 40
+text = "[0]"
+
+[node name="PlayerSpawner" type="MultiplayerSpawner" parent="."]
+unique_name_in_owner = true
+spawn_path = NodePath("../Players")
+script = ExtResource("6_j3j2i")
+player_scene = ExtResource("2_6ej3r")
+
+[node name="MapSpawner" type="MultiplayerSpawner" parent="."]
+unique_name_in_owner = true
+spawn_path = NodePath("../Map")
+spawn_limit = 1
+script = ExtResource("8_f035o")
+maps = Array[ExtResource("11_o108o")]([ExtResource("17_tsjuu"), ExtResource("17_qaxfm")])
+
+[node name="ItemsSpawner" type="MultiplayerSpawner" parent="."]
+unique_name_in_owner = true
+spawn_path = NodePath("../Items")
+script = ExtResource("11_5ajcq")
+item_scenes = Array[PackedScene]([ExtResource("12_q3kba"), ExtResource("13_frq8b")])
+
+[node name="SpawnInterval" type="Timer" parent="ItemsSpawner"]
+wait_time = 10.0
+
+[node name="Players" type="Node3D" parent="."]
+
+[node name="Map" type="Node3D" parent="." groups=["map"]]
+unique_name_in_owner = true
+script = ExtResource("20_umwhe")
+
+[node name="Items" type="Node3D" parent="."]
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("22_oyk58")
+
+[node name="Background" parent="GUI" instance=ExtResource("24_148nf")]
+layout_mode = 1
+offset_left = -1139.0
+offset_top = -490.5
+offset_right = 1139.0
+offset_bottom = 490.5
+
+[node name="MainMenu" parent="GUI" instance=ExtResource("10_dlhfp")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="VBoxContainer2" parent="GUI/MainMenu" index="0"]
+offset_left = -489.0
+offset_top = -169.0
+offset_right = -358.0
+offset_bottom = 58.0
+
+[node name="VoteUI" parent="GUI" instance=ExtResource("16_35qch")]
+visible = false
+layout_mode = 1
+map_vote_card = ExtResource("17_h84mx")
+
+[node name="Leaderboard" parent="GUI" instance=ExtResource("24_6wraw")]
+visible = false
+layout_mode = 1
+
+[node name="Options" parent="GUI" instance=ExtResource("25_0x4sv")]
+visible = false
+layout_mode = 1
+
+[node name="IngameMenu" parent="GUI" instance=ExtResource("26_6dtpu")]
+visible = false
+layout_mode = 1
+
+[node name="Shop" parent="GUI" instance=ExtResource("29_mnu2b")]
+visible = false
+layout_mode = 1
+
+[node name="Credits" parent="GUI" instance=ExtResource("31_j4xef")]
+visible = false
+layout_mode = 1
+
+[node name="Tutorial" parent="GUI" instance=ExtResource("25_q6yt8")]
+visible = false
+layout_mode = 1
+offset_top = 304.0
+offset_bottom = 304.0
+
+[node name="ServerController" type="Node" parent="."]
+script = ExtResource("11_k83tb")
+
+[node name="ClientController" type="Node" parent="."]
+script = ExtResource("12_aighc")
+
+[node name="CharacterCreator" type="Node3D" parent="."]
+
+[node name="TeamManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("14_22j3t")
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("20_eidb2")
+round_time = 120
+break_time = 10
+
+[node name="RoundTimer" type="Timer" parent="GameManager"]
+unique_name_in_owner = true
+wait_time = 30.0
+one_shot = true
+
+[node name="Leaderboard" type="Node" parent="." groups=["leaderboard"]]
+script = ExtResource("28_evcw1")
+
+[node name="MusicManager" type="Node" parent="."]
+script = ExtResource("31_lf8x2")
+menu_music = Array[String](["res://sounds/music/track1.mp3", "res://sounds/music/track2.mp3"])
+
+[connection signal="timeout" from="ItemsSpawner/SpawnInterval" to="ItemsSpawner" method="_on_spawn_interval_timeout"]
+[connection signal="pressed" from="GUI/MainMenu/VBoxContainer/CenterContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="GUI/MainMenu/VBoxContainer/CenterContainer/VBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="GUI/MainMenu/VBoxContainer/CenterContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="GUI/MainMenu/VBoxContainer/CenterContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="GUI/MainMenu/VBoxContainer/CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="timeout" from="GameManager/RoundTimer" to="GameManager" method="_on_round_timer_timeout"]
+
+[editable path="GUI/MainMenu"]

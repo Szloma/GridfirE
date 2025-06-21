@@ -1,0 +1,111 @@
+[gd_scene load_steps=15 format=3 uid="uid://op338m2rcsvg"]
+
+[ext_resource type="Script" path="res://scripts/shop.gd" id="1_76viv"]
+[ext_resource type="PackedScene" uid="uid://s21gt88qcgge" path="res://scenes/GUI/WeaponCard.tscn" id="2_qr53c"]
+[ext_resource type="Texture2D" uid="uid://diljfwb3xeees" path="res://testures/Buttons/HPShortDefault.png" id="3_md3rh"]
+[ext_resource type="Texture2D" uid="uid://lmbyt62iir1i" path="res://testures/Buttons/HPShortPressed.png" id="4_dtgw0"]
+[ext_resource type="Texture2D" uid="uid://bmu20i1nsrg3l" path="res://testures/Buttons/HPShortHover.png" id="5_hl774"]
+[ext_resource type="Texture2D" uid="uid://ctpto761l583o" path="res://testures/Buttons/BackShortDefault.png" id="5_sfvy5"]
+[ext_resource type="Texture2D" uid="uid://pwonm4cojqy7" path="res://testures/Buttons/BackShortPressed.png" id="6_h3dru"]
+[ext_resource type="Texture2D" uid="uid://cov5ptjo2s4yq" path="res://testures/Buttons/HPShortSelected.png" id="6_js0dw"]
+[ext_resource type="Texture2D" uid="uid://bycr7rkh3wi1p" path="res://testures/Buttons/BackShortHover.png" id="7_2ldyv"]
+[ext_resource type="Texture2D" uid="uid://gt8uvtwor7xy" path="res://testures/Buttons/AmmoShortDefault.png" id="7_43vag"]
+[ext_resource type="Texture2D" uid="uid://ddwbrn6npes4w" path="res://testures/Buttons/BackShortSelected.png" id="8_12cr4"]
+[ext_resource type="Texture2D" uid="uid://dtbsttcxsfyfa" path="res://testures/Buttons/AmmoShortPressed.png" id="8_sghj1"]
+[ext_resource type="Texture2D" uid="uid://n2vjpe1dofgu" path="res://testures/Buttons/AmmoShortHover.png" id="9_ihk87"]
+[ext_resource type="Texture2D" uid="uid://btr1d55v0tl01" path="res://testures/Buttons/AmmoShortSelected.png" id="10_sltly"]
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_76viv")
+weapon_card = ExtResource("2_qr53c")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -418.0
+offset_top = -241.0
+offset_right = 418.0
+offset_bottom = 241.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Store" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "For Sale:"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 3
+
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Hp" type="TextureButton" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_md3rh")
+texture_pressed = ExtResource("4_dtgw0")
+texture_hover = ExtResource("5_hl774")
+texture_focused = ExtResource("6_js0dw")
+
+[node name="Ammo" type="TextureButton" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_43vag")
+texture_pressed = ExtResource("8_sghj1")
+texture_hover = ExtResource("9_ihk87")
+texture_focused = ExtResource("10_sltly")
+
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(225.925, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Back" type="TextureButton" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(70, 50)
+layout_mode = 2
+texture_normal = ExtResource("5_sfvy5")
+texture_pressed = ExtResource("6_h3dru")
+texture_hover = ExtResource("7_2ldyv")
+texture_focused = ExtResource("8_12cr4")
+
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Hp" to="." method="_on_hp_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Ammo" to="." method="_on_ammo_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]

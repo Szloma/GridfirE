@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu2yi4lo8p4ey"]
+
+[ext_resource type="PackedScene" uid="uid://l1c5fem32hy7" path="res://assets/grassset/PlatformGiga.glb" id="1_lpguk"]
+[ext_resource type="Material" uid="uid://be3lxts6kupvx" path="res://materials/platformgrass.tres" id="2_k1e8r"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.94315, 0)
+
+[node name="PlatformGiga2" parent="." instance=ExtResource("1_lpguk")]
+
+[node name="PlatformGiga" parent="PlatformGiga2" index="0"]
+surface_material_override/0 = ExtResource("2_k1e8r")
+
+[editable path="PlatformGiga2"]
